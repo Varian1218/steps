@@ -14,6 +14,11 @@ namespace Steps
             _steps.Add(step);
         }
 
+        public void AddStep(Func<float, bool> step)
+        {
+            _steps.Add(() => step(Time.deltaTime));
+        }
+
         public void AddStep(IEnumerator step)
         {
             StartCoroutine(step);

@@ -19,6 +19,11 @@ namespace Steps
             _impl.AddStep(step);
         }
 
+        public void AddStep(Func<float, bool> step)
+        {
+            _impl.AddStep(step);
+        }
+
         public void AddStep(IEnumerator step)
         {
             _impl.AddStep(step);
